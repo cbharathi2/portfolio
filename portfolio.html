@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bharathi Chandrasekar - Web Developer</title>
+
+  <style>
+    :root {
+      --accent: #00bfa6;
+      --bg: #0d0d0d;
+      --text: #e0f7ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #00d9b3;
+      text-decoration: underline;
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(13, 13, 13, 0.95);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--accent);
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8rem 5% 4rem;
+      text-align: center;
+    }
+
+    .text-section {
+      max-width: 800px;
+    }
+
+    .text-section h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .text-section p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 5rem 10%;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    section h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .about-columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .about-box {
+      flex: 1;
+      min-width: 250px;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 10px rgba(0, 255, 200, 0.05);
+    }
+
+    .about-box h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .about-box ul {
+      list-style-type: disc;
+      margin-left: 1.2rem;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    .work-columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .project-box {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      color: var(--text);
+    }
+
+    .project-box summary {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--accent);
+      text-align: center;
+      list-style: none;
+    }
+
+    .project-box[open] summary {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .project-desc {
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .project-desc a {
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--bg);
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #00d9b3;
+      color: #000;
+    }
+
+    .contact-container p,
+    .contact-container a.download-btn {
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        padding-top: 6rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .text-section h1 {
+        font-size: 2rem;
+      }
+
+      .text-section p {
+        font-size: 1.2rem;
+      }
+
+      .about-columns,
+      .work-columns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">My Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="main-content">
+    <div class="text-section">
+      <h1>Web Developer</h1>
+      <p>Hi! I'm <strong>Bharathi Chandrasekar</strong> from India</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate web developer with a strong interest in building responsive, modern websites and applications. I specialize in front-end development and also have experience with back-end technologies. I love solving real-world problems through code and continuously learning new tools.
+    </p>
+    <div class="about-columns">
+      <div class="about-box">
+        <h3>🛠 Skills</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>JAVA</li>
+          <li>Python, MySQL</li>
+          <li>Git & GitHub</li>
+        </ul>
+      </div>
+      <div class="about-box">
+        <h3>💼 Experience</h3>
+        <ul>
+          <li><strong>Web Dev Intern</strong> – VAULT OF CODES (Present)</li>
+          <li><strong>AIML Intern</strong> – EDUNET (Present)</li>
+          <li><strong>Python Developer Intern</strong> – ICF-IT CENTER (2024)</li>
+        </ul>
+      </div>
+      <div class="about-box">
+        <h3>🎓 Education</h3>
+        <ul>
+          <li><strong>B.Tech – CSE</strong><br>Sri Ramanujar Engineering College<br>2022 – 2026</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section id="work">
+    <h2>My Works</h2>
+    <div class="work-columns">
+      <details class="project-box" style="background-image: url('band.png');">
+        <summary>📡 Network Bandwidth Monitor</summary>
+        <div class="project-desc">
+          <p>
+            A real-time dashboard to monitor live network bandwidth using Python, Dash, and PostgreSQL. It visualizes usage patterns and sends alerts.
+          </p>
+          <a href="https://github.com/cbharathi2/networkmonitor.git" target="_blank">🔗 View on GitHub</a>
+        </div>
+      </details>
+
+      <details class="project-box" style="background-image: url('ewaste.jpg');">
+        <summary>🗑️ E-Waste Classifier</summary>
+        <div class="project-desc">
+          <p>
+            An AI model that classifies e-waste images using EfficientNetV2B0. Helps in sorting recyclable electronics accurately.
+          </p>
+          <a href="https://github.com/cbharathi2/week2.git" target="_blank">🔗 View on GitHub</a>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-container">
+      <p>📧 Email: <a href="mailto:cbharathi25122605@gmail.com">cbharathi25122605@gmail.com</a></p>
+      <p>📞 Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+
+      <p><a href="https://www.linkedin.com/in/bharathi-c-2508142a1" target="_blank">🔗 LinkedIn</a></p>
+      <p><a href="https://github.com/cbharathi2" target="_blank">💻 GitHub</a></p>
+
+      <p><a href="https://facebook.com/yourprofile" target="_blank">📘 Facebook</a></p>
+      <p><a href="https://instagram.com/yourprofile" target="_blank">📸 Instagram</a></p>
+      <p><a href="https://twitter.com/yourprofile" target="_blank">🐦 Twitter</a></p>
+
+      <a href="BHARATHI RESUME.pdf" download class="download-btn">⬇️ Download Resume</a>
+    </div>
+  </section>
+
+</body>
+</html>
